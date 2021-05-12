@@ -65,4 +65,4 @@ jobs:
           package: .
       - name: Sign out of Azure
           run: |
-            az logout
+          az logout
