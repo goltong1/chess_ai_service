@@ -64,5 +64,5 @@ jobs:
           slot-name: 'production'
           package: .
       - name: Sign out of Azure
-          run: |
-            az logout
+        run: |
+          az logout
