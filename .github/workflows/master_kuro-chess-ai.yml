@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - kuro-chess-ai
+name: Build and deploy Python app to Azure Web App - Kuro-chess-ai
 
 on:
   push:
@@ -53,24 +53,23 @@ jobs:
         with:
           name: python-app
           path: .
+
+      - name: 'Deploy to Azure Web App'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'Kuro-chess-ai'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_2f9c58df053045e48ff2683e4ee35cbe }}
       - name: Sign in to Azure 
-      # Use the GitHub secret you added
-      - uses: azure/login@v1
+        uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Deploy to Azure Web App
-      # Remove publish-profile
-      - uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v2
         with:
           app-name: '<app-name>'
           slot-name: 'production'
           package: .
       - name: Sign out of Azure
-        run: |
-          az logout
-      - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'kuro-chess-ai'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_6c07c6e7002943d686a67288d9cd34b8 }}
+          run: |
+            az logout
