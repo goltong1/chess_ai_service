@@ -26,7 +26,7 @@ SECRET_KEY = 'b9d519c2-7881-41f6-b76b-ee0b61541ac9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://kuro-chess-ai.azurewebsites.net']
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
