@@ -1,2 +1,1 @@
-django >= 2.1.6, < 3.0
-whitenoise
+django== 3.0.2
