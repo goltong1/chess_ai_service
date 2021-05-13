@@ -3,7 +3,7 @@
 from channels.auth import AuthMiddlewareStack
 from channels.routing import ProtocolTypeRouter, URLRouter
 import Chess_ai.routing
-
+ASGI_APPLICATION = "chess_ai_service.routing.application"
 # 클라이언트와 Channels 개발 서버가 연결 될 때, 어느 protocol 타입의 연결인지
 application = ProtocolTypeRouter({
     # (http->django views is added by default)
