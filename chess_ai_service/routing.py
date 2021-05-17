@@ -13,4 +13,4 @@ application = ProtocolTypeRouter({
             Chess_ai.routing.websocket_urlpatterns
         )
     ),
-})
+})  
