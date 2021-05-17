@@ -50,6 +50,9 @@
     </Compile>
     <Compile Include="Chess_ai\views.py" />
     <Compile Include="Chess_ai\__init__.py" />
+    <Compile Include="chess_ai_service\asgi.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="chess_ai_service\routing.py">
       <SubType>Code</SubType>
     </Compile>

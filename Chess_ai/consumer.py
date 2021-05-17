@@ -6,7 +6,7 @@ class ChatConsumer(WebsocketConsumer):
     #웹소켓에 연결, 혹은 연결 해제해요
     def connect(self):
         self.accept()
-
+        print('connect!')
     def disconnect(self, close_code):
         pass
 
