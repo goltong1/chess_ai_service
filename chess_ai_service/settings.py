@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 ASGI_APPLICATION = 'chess_ai_service.routing.application'
-#WSGI_APPLICATION = 'chess_ai_service.wsgi.application'
+WSGI_APPLICATION = 'chess_ai_service.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
