@@ -63,6 +63,7 @@
     <Compile Include="chess_ai_service\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="requirements.txt" />
     <Content Include="static\admin\css\autocomplete.781713f30664.css" />
     <Content Include="static\admin\css\autocomplete.781713f30664.css.gz" />
     <Content Include="static\admin\css\autocomplete.css" />
@@ -542,7 +543,6 @@
     <Content Include="static\staticfiles.json" />
     <None Include="Kuro-chess-ai - Web Deploy.pubxml" />
     <Content Include="Chess_ai\templates\Chess_ai\index.html" />
-    <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Chess_ai\" />
