@@ -2,3 +2,4 @@ django
 channels
 uvicorn
 uvloop
+daphne
