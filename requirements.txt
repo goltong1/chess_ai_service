@@ -1,5 +1,5 @@
 django== 3.0.2
 channels
-uvicorn
-uvloop
-httptools
+json
+time
+copy
