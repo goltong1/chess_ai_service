@@ -28,7 +28,7 @@ def reward_calculation(die_piece):
         return 3
     elif die_piece==0 or die_piece==7 or die_piece==24 or die_piece==31:
         return 5
-    elif die_piece==3 or die_piece==27:
+    elif die_piece==3 or die_piece==27 or die_piece<0:
         return 9
     elif die_piece==4 or die_piece==28:
         return 1000
@@ -37,12 +37,12 @@ def reward_calculation(die_piece):
 def check(board,piece,now_x,now_y,move_x,move_y):
     if now_x==-1 or (now_x==move_x and now_y==move_y)or move_x>7 or move_y>7:
         return 0
-    elif piece>7 and piece<=15:
+    elif abs(piece)>7 and abs(piece)<=15:
         if board[now_y][now_x]>=0:
             return pawn_check(board,now_x,now_y,move_x,move_y,1) #블랙 1, 화이트 -1
         else:
             return queen_check(board,now_x,now_y,move_x,move_y,1)
-    elif piece>15 and piece<24:
+    elif abs(piece)>15 and abs(piece)<24:
         if board[now_y][now_x]>=0:
             return pawn_check(board,now_x,now_y,move_x,move_y,-1)
         else:
@@ -334,6 +334,46 @@ def find_best_move(board,turn,n):
                [16,17,32,32,20,21,22,23],
                [24,25,26,27,28,29,30,31]]:
         return [12,4,2]
+    if not(turn) and board==[
+               [0,1,2,3,4,5,6,7],
+               [8,9,10,11,12,13,14,15],
+               [32,32,32,32,32,32,32,32],
+               [32,32,32,32,32,32,32,32],
+               [32,32,32,32,32,32,32,32],
+               [32,32,32,32,32,30,32,32],
+               [16,17,18,19,20,21,22,23],
+               [24,25,26,27,28,29,32,31]]:
+        return [1,2,2]
+    if not(turn) and board==[
+               [0,1,2,3,4,5,6,7],
+               [8,9,10,11,12,13,14,15],
+               [32,32,32,32,32,32,32,32],
+               [32,32,32,32,32,32,32,32],
+               [32,32,32,32,32,32,32,32],
+               [32,32,32,32,32,32,32,30],
+               [16,17,18,19,20,21,22,23],
+               [24,25,26,27,28,29,32,31]]:
+        return [1,0,2]
+    if not(turn) and board==[
+               [0,1,2,3,4,5,6,7],
+               [8,9,10,11,12,13,14,15],
+               [32,32,32,32,32,32,32,32],
+               [32,32,32,32,32,32,32,32],
+               [32,32,32,32,32,32,32,32],
+               [32,32,25,32,32,32,32,32],
+               [16,17,18,19,20,21,22,23],
+               [24,32,26,27,28,29,30,31]]:
+        return [6,7,2]
+    if not(turn) and board==[
+               [0,1,2,3,4,5,6,7],
+               [8,9,10,11,12,13,14,15],
+               [32,32,32,32,32,32,32,32],
+               [32,32,32,32,32,32,32,32],
+               [32,32,32,32,32,32,32,32],
+               [25,32,32,32,32,32,32,32],
+               [16,17,18,19,20,21,22,23],
+               [24,32,26,27,28,29,30,31]]:
+        return [6,5,2]
     if turn:
         piece_h=16
     else:
